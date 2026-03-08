@@ -354,47 +354,47 @@
                     <!-- Content Row -->
                     <div class="row">
                         <div class="col-6">
-                            <form>
+                            <form id="product-form">
                           
                                 <!-- Text input -->
                                 <div data-mdb-input-init class="form-outline mb-4">
-                                    <select id="productos-select" class="form-select form-control">
+                                    <select id="product-select" class="form-select form-control">
                                         <option selected>Seleccionar un producto</option>
-                                        <option value="Hamburguesa">Hambruguesa</option>
+                                        <option value="Hamburguesa">Hamburguesa</option>
                                         <option value="Picada">Picada</option>
                                         <option value="Pasta">Pasta</option>
                                         <option value="Perro">Perro</option>
-                                        <option value="Sanchipapa">Sanchipapa</option>
+                                        <option value="Sanchipapa">Salchipapa</option>
                                         <option value="Chuzo">Chuzo</option>
                                         <option value="Pizza">Pizza</option>
                                         <option value="Pollo">Pollo</option>
                                         <option value="Tacos">Tacos</option>
                                         <option value="Burrito">Burrito</option>
                                       </select>
-                                  <label class="form-label" for="form6Example3">Producto</label>
+                                  <label class="form-label" for="product-select">Producto</label>
                                 </div>
                               
                                 <!-- Email input -->
                                 <div data-mdb-input-init class="form-outline mb-4">
-                                  <input type="number" id="precio-pro" class="form-control" />
-                                  <label class="form-label" for="form6Example5">Precio</label>
+                                  <input type="number" id="priceProduct" class="form-control" />
+                                  <label class="form-label" for="priceProduct">Precio</label>
                                 </div>
     
                                 <!-- Number input -->
                                 <div data-mdb-input-init class="form-outline mb-4">
-                                  <input type="number" id="form6Example6" class="form-control" />
-                                  <label class="form-label" for="form6Example6">Stock</label>
+                                  <input type="number" id="stockProduct" class="form-control" />
+                                  <label class="form-label" for="stockProduct">Stock</label>
                                 </div>
                               
                                 <!-- Message input -->
                                 <div data-mdb-input-init class="form-outline mb-4">
-                                  <textarea class="form-control" id="form6Example7" rows="4"></textarea>
-                                  <label class="form-label" for="form6Example7">Descripcion</label>
+                                  <textarea class="form-control" id="descriptionProduct" rows="4"></textarea>
+                                  <label class="form-label" for="descriptionProduct">Descripcion</label>
                                 </div>
                             
                               
                                 <!-- Submit button -->
-                                <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Crear Producto</button>
+                                <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4" id="btn-create-product">Crear Producto</button>
                             </form>
                         </div>
                         <div class="col-5">
@@ -464,9 +464,7 @@
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/add-products.js"></script>
 
     <script>
         let imagenes = [
@@ -521,9 +519,9 @@
                 url: "https://cdn.colombia.com/gastronomia/2016/06/21/picada-colombiana-2990.jpg"
             }
         ];
-        let selectImagen = document.querySelector('#productos-select');
+        let selectImagen = document.querySelector('#product-select');
         let imagenMostrada = document.querySelector('#imagen-pro');
-        let precioInput = document.querySelector("#precio-pro");
+        let precioInput = document.querySelector("#priceProduct");
 
         selectImagen.addEventListener('change', () => {
             const imagenSeleccionada = imagenes.find(imagen => imagen.name == selectImagen.value);

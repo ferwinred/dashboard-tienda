@@ -67,8 +67,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const btnSaveEdit = document.getElementById('btn-save-edit-product');
 
 
-
-
     btnSaveEdit.addEventListener('click', (e) => {
         // Lógica para guardar los cambios del producto
         console.log('Guardar cambios del producto', e);
